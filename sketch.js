@@ -15,17 +15,10 @@ let effect1;
 function preload()
 {
     effect1 = loadSound("effect2.wav")
-<<<<<<< HEAD
-    effect1.setVolume(0.5)
-}
-function setup() {
-  frameRate(5)
-=======
 }
 function setup() {
   frameRate(5)
   effect1.setVolume(0.5)
->>>>>>> gh-pages
   createCanvas(windowWidth, windowHeight);
   fill(200, 200, 200)
   sizeSlider = createSlider(3, 70, 40);
@@ -45,10 +38,7 @@ function setup() {
   setvariables()
   createnodes()
   paintbackground()
-<<<<<<< HEAD
-=======
   paintnodes()
->>>>>>> gh-pages
 }
 function setvariables()
 {
@@ -115,8 +105,6 @@ function paintbackground()
   text('Speed:', 10, height-75);
   text('Volume:', 10, height-95);
 }
-<<<<<<< HEAD
-=======
 function paintnodes()
 {
   for(i = 0; i < nList.length; i++)
@@ -133,7 +121,6 @@ function paintnodes()
       ellipse(x, y, ballSize, ballSize)
     }
 }
->>>>>>> gh-pages
 function draw() {
   
   for(i = 0; i < nList.length; i++)
@@ -151,8 +138,6 @@ function draw() {
             {
               nList[cchange].value = nList[nei].value
               effect1.play()
-<<<<<<< HEAD
-=======
               
               x = nList[cchange].PosX
               y = nList[cchange].PosY
@@ -163,27 +148,10 @@ function draw() {
                 fill(0, 0, 200)
       
               ellipse(x, y, ballSize, ballSize)
->>>>>>> gh-pages
               break
             }
         }
     }
-<<<<<<< HEAD
-  for(i = 0; i < nList.length; i++)
-    {
-      node = nList[i]
-      x = node.PosX
-      y = node.PosY
-      
-      if(node.value == 0)
-        fill(200, 0, 0)
-      else
-        fill(0, 0, 200)
-      
-      ellipse(x, y, ballSize, ballSize)
-    }
-=======
->>>>>>> gh-pages
 }
   
   function keyPressed()
@@ -199,10 +167,7 @@ function draw() {
         setvariables()
         createnodes()
         paintbackground()
-<<<<<<< HEAD
-=======
         paintnodes()
->>>>>>> gh-pages
   }
   function UpdateFR()
   {
@@ -214,7 +179,5 @@ function draw() {
   }
   
   
-<<<<<<< HEAD
-=======
 
->>>>>>> gh-pages
+
