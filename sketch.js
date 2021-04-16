@@ -123,9 +123,10 @@ function paintnodes()
 }
 function draw() {
   
+  rand = Math.random()
   for(i = 0; i < nList.length; i++)
     {
-      cchange = (i + Math.floor(Math.random()* nList.length)) % nList.length
+      cchange = (i + Math.floor(rand* nList.length)) % nList.length
       
       ncount = nList[cchange].Neighbours.length
       
