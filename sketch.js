@@ -15,10 +15,10 @@ let effect1;
 function preload()
 {
     effect1 = loadSound("effect2.wav")
-    effect1.setVolume(0.5)
 }
 function setup() {
   frameRate(5)
+  effect1.setVolume(0.5)
   createCanvas(windowWidth, windowHeight);
   fill(200, 200, 200)
   sizeSlider = createSlider(3, 70, 40);
@@ -38,6 +38,7 @@ function setup() {
   setvariables()
   createnodes()
   paintbackground()
+  paintnodes()
 }
 function setvariables()
 {
@@ -104,6 +105,22 @@ function paintbackground()
   text('Speed:', 10, height-75);
   text('Volume:', 10, height-95);
 }
+function paintnodes()
+{
+  for(i = 0; i < nList.length; i++)
+    {
+      node = nList[i]
+      x = node.PosX
+      y = node.PosY
+      
+      if(node.value == 0)
+        fill(200, 0, 0)
+      else
+        fill(0, 0, 200)
+      
+      ellipse(x, y, ballSize, ballSize)
+    }
+}
 function draw() {
   
   for(i = 0; i < nList.length; i++)
@@ -121,22 +138,19 @@ function draw() {
             {
               nList[cchange].value = nList[nei].value
               effect1.play()
+              
+              x = nList[cchange].PosX
+              y = nList[cchange].PosY
+      
+              if(nList[cchange].value == 0)
+                fill(200, 0, 0)
+              else
+                fill(0, 0, 200)
+      
+              ellipse(x, y, ballSize, ballSize)
               break
             }
         }
-    }
-  for(i = 0; i < nList.length; i++)
-    {
-      node = nList[i]
-      x = node.PosX
-      y = node.PosY
-      
-      if(node.value == 0)
-        fill(200, 0, 0)
-      else
-        fill(0, 0, 200)
-      
-      ellipse(x, y, ballSize, ballSize)
     }
 }
   
@@ -153,6 +167,7 @@ function draw() {
         setvariables()
         createnodes()
         paintbackground()
+        paintnodes()
   }
   function UpdateFR()
   {
@@ -164,3 +179,4 @@ function draw() {
   }
   
   
+
