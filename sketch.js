@@ -115,8 +115,10 @@ function paintnodes()
       
       if(node.value == 0)
         fill(200, 0, 0)
-      else
+      else if(node.value == 1)
         fill(0, 0, 200)
+	  else
+		fill(200, 200, 0)
       
       ellipse(x, y, ballSize, ballSize)
     }
@@ -145,8 +147,10 @@ function draw() {
       
               if(nList[cchange].value == 0)
                 fill(200, 0, 0)
-              else
+              else if(nList[cchange].value == 1)
                 fill(0, 0, 200)
+              else
+                fill(200, 200, 0)
       
               ellipse(x, y, ballSize, ballSize)
               break
@@ -178,6 +182,21 @@ function draw() {
   {
     effect1.setVolume(volumeSlider.value()/100)
   }
-  
+  function mousePressed()
+  {
+    for(i = 0; i < nList.length; i++)
+      {
+        node = nList[i]
+        x = node.PosX
+        y = node.PosY
+        if(dist(x, y, mouseX, mouseY) < ballSize)
+          {
+            nList[i].value = 2
+            fill(200, 200, 0)
+            ellipse(x, y, ballSize, ballSize)
+          }
+      }
+  }
+   
   
 
