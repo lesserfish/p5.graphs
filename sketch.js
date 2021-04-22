@@ -7,6 +7,7 @@ class Node
       this.Neighbours = []
       this.PosX = 0
       this.PosY = 0
+	  this.kind = "human"
     }
   }
 
@@ -130,7 +131,7 @@ function draw() {
     {
       cchange = (i + Math.floor(rand* nList.length)) % nList.length
       
-	  if(nList[cchange].value == 2)
+      if(nList[cchange].kind == "bot")
         continue;
       ncount = nList[cchange].Neighbours.length
       
@@ -194,6 +195,7 @@ function draw() {
         if(dist(x, y, mouseX, mouseY) < ballSize)
           {
             nList[i].value = 2
+			nList[i].kind = "bot"
             fill(200, 200, 0)
             ellipse(x, y, ballSize, ballSize)
           }
