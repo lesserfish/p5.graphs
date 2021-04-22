@@ -3,7 +3,7 @@ class Node
     constructor(_id)
     {
       this.nid = _id
-      this.value = Math.floor(Math.random()*2)
+      this.value = Math.floor(Math.random()*2) //0 is red, 1 is blue,  2 is yellow bot
       this.Neighbours = []
       this.PosX = 0
       this.PosY = 0
@@ -130,6 +130,8 @@ function draw() {
     {
       cchange = (i + Math.floor(rand* nList.length)) % nList.length
       
+	  if(nList[cchange].value == 2)
+        continue;
       ncount = nList[cchange].Neighbours.length
       
       if(ncount > 0)
